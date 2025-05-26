@@ -29,22 +29,10 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: "https://mern-auth-fronted.onrender.com",
     credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE"]
   })
 );
-app.use(session ({
-  secret: process.env.COOKIE_KEY || 'defaultSecret' ,
-  resave: false,
-  saveUninitialized: false
-}))
 
 dotenv.config();
 app.use(passport.initialize());
