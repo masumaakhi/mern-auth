@@ -22,8 +22,7 @@ const port = process.env.PORT || 5250;
 connectDB();
 
 const allowedOrigins = ['http://localhost:3000',
-                        https://mern-auth-fronted.onrender.com/,
-                        'http://localhost:5250'];
+                        "https://mern-auth-fronted.onrender.com"];
 
 
 app.use(express.json());
