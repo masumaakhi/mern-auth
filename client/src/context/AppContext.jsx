@@ -7,7 +7,7 @@ export const AppContext = createContext();
 
 export const AppContextProvider = (props) => {
 
-  const backendUrl = "http://localhost:5250";
+  const backendUrl = "https://mern-auth-backend-thu0.onrender.com";
   
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
