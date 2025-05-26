@@ -7,10 +7,11 @@ import { toast } from "react-toastify";
 
 const Signup = () => {
   const navigate = useNavigate();
-  const { backendUrl, setIsLoggedIn, getUserData, setIsLoading } = useContext(AppContext);
+  const { backendUrl, setIsLoggedIn, getUserData } = useContext(AppContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading,setIsLoading] = useState(false);
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
@@ -41,6 +42,7 @@ const Signup = () => {
         const handleGoogleLogin = () => {
         try {
              setIsLoading(true);
+
              const googleLoginUrl = `${backendUrl}/api/auth/google`;
              window.location.href = googleLoginUrl;
         } catch (error) {

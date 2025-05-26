@@ -7,7 +7,7 @@ export const AppContext = createContext();
 
 export const AppContextProvider = (props) => {
 
-  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  const backendUrl = "http://localhost:5250";
   
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userData, setUserData] = useState(null);
