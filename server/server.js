@@ -22,7 +22,9 @@ const port = process.env.PORT || 5250;
 connectDB();
 
 const allowedOrigins = ['http://localhost:3000',
-                        "https://mern-auth-fronted.onrender.com"];
+                        "https://mern-auth-fronted.onrender.com",
+                        "https://mern-auth-backend-thu0.onrender.com",
+                        "http://localhost:5250"];  
 
 
 app.use(express.json());
@@ -58,8 +60,12 @@ app.use('/api/admin', adminRouter);
 
 // Passport(passport);
 
-
+const server = "https://mern-auth-backend-thu0.onrender.com"
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
+app.listen(server, () => {
+  console.log(`server running ${server}`);
+})
